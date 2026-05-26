@@ -26,6 +26,37 @@ const map = new Map(); // new - 생성자 -> Map()
 
 // TIl)왜 별도의 Map이 Js에서 필요하게 되었는가? (Object로 충분하지 않나?)
 
+// 객체명[프로퍼티명(리터럴 - 타자형태로 쳐서 표현할 수 있는 값)] = 값
+o["aa"] = 1234;
+// 식별자 규칙을 위반하지 않는 (공백, 특수문자) 표현의 경우에는 변수처럼 바로 작성할 수 있음
+o.bb = 12345;
+
+// map은 set이라는 전용 함수로 처리
+// map.set(Key, Value)
+
+map.set("name", "Jaehoon");
+map.set("age", 26);
+
+// 데이터 불러오기
+// 객체
+console.log(o.aa, o.bb);
+// map
+// map.get(Key)
+const name = map.get("name");
+const age = map.get("age");
+
+console.log(name);
+
+// 객체에서 특정한 프로퍼티가 포함되었는지 in 으로 검사
+// boolean 값 리턴
+console.log("aa" in o);
+
+// map에서는 has 사용
+// map.has(key)
+
+console.log(map.has("name"));
+
 for (const c of map) {
   //변환과정 등을 거치지 않아도 오류 발생 x , iterable하다
+  console.log(c);
 }
