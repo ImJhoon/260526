@@ -40,7 +40,42 @@ console.log(a2.map((v, i) => (!(i % 2) ? v ** 2 : 0)));
 
 console.log(a2); //map 원본에 영향을 안미침 - 복사본을 만듦
 console.log("--------------------------");
-// filter -> map이랑 비슷한데 결과가 무조건 true/false. -> true인 것들만 남겨서 신규 배욜을 만든다
+// filter -> map이랑 비슷한데 결과가 무조건 true/false. -> true인 것들만 남겨서 신규 배열을 만든다
+const newA2 = a2.filter((v) => v % 2 == 0);
 console.log(a2.filter((v) => v % 2 == 0));
 console.log(a2.filter((v) => v % 3 == 0));
 console.log(a2.filter((_, i) => i % 3 == 0 && i != 0));
+console.log("--------------------------");
+console.log(newA2);
+console.log(a2);
+
+// Reduce -> 배열을 1개의 값으로 변환
+const a4 = [1, 10, 5, 4, 7];
+
+// 1. 숫자 연산
+// forEach, map, filter => (v, i, a) / sort -> (e1, e2)
+// reduce -> (prev, cur, i, arr)
+// fn(acc, cur)
+
+const sum = a4.reduce((prev, cur) => {
+  console.log("prev : ", prev, "cur : ", cur);
+  return prev * cur;
+});
+console.log(sum);
+
+console.log(
+  a4.reduce((prev, cur) => {
+    console.log("prev : ", prev, "cur : ", cur);
+    return prev + cur;
+  }, 100),
+);
+
+console.log(
+  a4.reduce((prev, cur) => {
+    console.log("prev : ", prev, "cur : ", cur);
+    if (cur % 2 == 0) {
+      prev.push(cur);
+    }
+    return prev;
+  }, []),
+);
