@@ -60,3 +60,17 @@ for (const c of map) {
   //변환과정 등을 거치지 않아도 오류 발생 x , iterable하다
   console.log(c);
 }
+
+// 객체로 of를 사용하려면
+for (const c of Object.values(o)) {
+  console.log(c);
+}
+
+// 객체였으면 object.* 외부 유틸리티를 썼어야하는....
+console.log(map.entries());
+console.log(map.keys());
+console.log(map.values());
+
+// 객체는 스스로 길이 관련된 게 X
+console.log(Object.values(o).length);
+console.log(map.size);
