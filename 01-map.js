@@ -33,6 +33,7 @@ o.bb = 12345;
 
 // map은 set이라는 전용 함수로 처리
 // map.set(Key, Value)
+// 해당 Key가 없으면 새로운 데이터 추가, 기존에 있는 Key라면 Value 수정
 
 map.set("name", "Jaehoon");
 map.set("age", 26);
@@ -74,3 +75,15 @@ console.log(map.values());
 // 객체는 스스로 길이 관련된 게 X
 console.log(Object.values(o).length);
 console.log(map.size);
+
+const m = new Map();
+m.set("counter", 0); // 초기값이 있다면
+if (m.has("counter") && typeof m.get("counter") == "number") {
+  m.set("counter", m.get("counter") + 1); // +1
+} else {
+  m.set("counter", 0);
+}
+console.log(m);
+
+// 2. map vs map
+// 자료구조의 map과 함수로서의 map 개념 존재
